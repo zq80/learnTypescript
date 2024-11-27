@@ -20,7 +20,17 @@ class People{
  
 //  console.log("peo:",People.count)
 
+ 
  const dataProp= Object.getOwnPropertyDescriptor(People.prototype,"doEat")
- console.log("dataProp",dataProp)
+
+ const targetMethod=dataProp!.value
+
+dataProp!.value=function(...args:any[]){
+    console.log("前置拦截")
+    targetMethod.apply(this,args)
+    console.log("后置拦截")
+}
+
+ dataProp?.value('zq','sz')
  
  export{}
