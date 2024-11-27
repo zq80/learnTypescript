@@ -19,13 +19,21 @@ class People{
 //  let p3=new People("z3",33,"dsfs")
  
 //  console.log("peo:",People.count)
-
+class StringUtil{
+    static trimSpace(str:string){
+        return str.replace(/\s+/g,"")
+    }
+}
  
  const dataProp= Object.getOwnPropertyDescriptor(People.prototype,"doEat")
 
  const targetMethod=dataProp!.value
 
 dataProp!.value=function(...args:any[]){
+    args=args.map(arg=>{
+        if(typeof arg==="string") return StringUtil.trimSpace(arg)
+        return arg
+    })
     console.log("前置拦截")
     targetMethod.apply(this,args)
     console.log("后置拦截")
@@ -35,7 +43,7 @@ dataProp!.value=function(...args:any[]){
 
 Object.defineProperty(People.prototype,"doEat",dataProp!)
 let p=new People("zq",22,"sz");
-p.doEat("zz","ss")
+p.doEat("z z "," s s ")
 
  
  export{}
