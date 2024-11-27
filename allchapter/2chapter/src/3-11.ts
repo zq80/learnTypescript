@@ -17,5 +17,6 @@ console.log("abc")
 // const d2= DateUtil.getInstance()
 // console.log(d1===d2)
 // d1.formatDate()
+
 export{}
 //单例模式
