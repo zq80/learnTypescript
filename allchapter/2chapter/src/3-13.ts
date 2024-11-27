@@ -31,6 +31,11 @@ dataProp!.value=function(...args:any[]){
     console.log("后置拦截")
 }
 
- dataProp?.value('zq','sz')
+//  dataProp?.value('zq','sz')
+
+Object.defineProperty(People.prototype,"doEat",dataProp!)
+let p=new People("zq",22,"sz");
+p.doEat("zz","ss")
+
  
  export{}
