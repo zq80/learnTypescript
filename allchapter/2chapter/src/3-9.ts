@@ -1,10 +1,10 @@
-class DateUtil{
+export default class DateUtil{
     static  formatDate(){}
      
 }
 
 // let dateUtil=new DateUtil();
-DateUtil.formatDate();
+// DateUtil.formatDate();
 
 
 //静态方法
