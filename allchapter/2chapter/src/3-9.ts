@@ -1,7 +1,10 @@
 class DateUtil{
-     formatDate(){}
+    static  formatDate(){}
      
 }
 
-let dateUtil=new DateUtil();
-dateUtil.formatDate();
+// let dateUtil=new DateUtil();
+DateUtil.formatDate();
+
+
+//静态方法
